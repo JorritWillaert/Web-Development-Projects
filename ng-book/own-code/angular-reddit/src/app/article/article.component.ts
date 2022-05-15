@@ -17,12 +17,14 @@ export class ArticleComponent implements OnInit {
     this.votes = 10;
   }
 
-  voteUp() {
+  voteUp(): boolean {
     this.votes += 1;
+    return false; // Do not propagate click to parents
   }
 
-  voteDown() {
+  voteDown(): boolean {
     this.votes -= 1;
+    return false; // Do not propagate click to parents
   }
 
   ngOnInit(): void {
