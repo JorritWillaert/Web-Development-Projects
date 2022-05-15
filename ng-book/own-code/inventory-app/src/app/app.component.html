@@ -1,4 +1,3 @@
 <div class="inventory-app">
-  <h1>{{ product.name }}</h1>
-  <span>{{ product.sku }}</span>
+  <products-list productList="products" (onProductSelected)="productWasSelected($event)"></products-list>
 </div>
