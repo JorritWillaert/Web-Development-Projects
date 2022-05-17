@@ -19,7 +19,7 @@ import { ProductDepartmentComponent } from './product-department/product-departm
     ProductDepartmentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
