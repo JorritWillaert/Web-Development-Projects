@@ -8,10 +8,18 @@
   >
     <div class="field" [class.error]="!sku.valid && sku.touched">
       <label for="skuInput">SKU</label>
-      <input type="text" id="skuInput" placeholder="SKU" [formControl]="$any(sku)" />
+      <input
+        type="text"
+        id="skuInput"
+        placeholder="SKU"
+        [formControl]="$any(sku)"
+      />
       <div *ngIf="!sku.valid" class="ui error message">SKU is invalid</div>
       <div *ngIf="sku.hasError('required')" class="ui error message">
         SKU is required
+      </div>
+      <div *ngIf="sku.hasError('invalidSku')" class="ui error message">
+        SKU must begin with <span>123</span>
       </div>
     </div>
 
