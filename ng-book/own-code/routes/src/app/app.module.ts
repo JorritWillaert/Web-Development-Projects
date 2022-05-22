@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   // basic routes
@@ -16,20 +17,20 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'contactus', redirectTo: 'contact' },
 
-  // authentication demo
-  { path: 'login', component: LoginComponent },
-  {
-    path: 'protected',
-    component: ProtectedComponent,
-    canActivate: [LoggedInGuard],
-  },
+  // // authentication demo
+  // { path: 'login', component: LoginComponent },
+  // {
+  //   path: 'protected',
+  //   component: ProtectedComponent,
+  //   canActivate: [LoggedInGuard],
+  // },
 
-  // nested
-  {
-    path: 'products',
-    component: ProductsComponent,
-    children: childRoutes,
-  },
+  // // nested
+  // {
+  //   path: 'products',
+  //   component: ProductsComponent,
+  //   children: childRoutes,
+  // },
 ];
 
 @NgModule({
@@ -38,9 +39,14 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    ProductsModule,
+    // ProductsModule,
   ],
-  providers: [],
+  providers: [
+    // uncomment this for "hash-bang" routing
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    //AUTH_PROVIDERS,
+    //LoggedInGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
