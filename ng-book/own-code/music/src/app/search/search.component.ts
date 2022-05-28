@@ -21,15 +21,19 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.search();
+  }
 
-  search() : void {
+  search(): void {
     console.log('this.query', this.query);
     if (!this.query) {
       return;
     }
 
-    this.spotify.searchTrack(this.query).subscribe((res: any) => this.renderResults(res));
+    this.spotify
+      .searchTrack(this.query)
+      .subscribe((res: any) => this.renderResults(res));
   }
 
   renderResults(res: any): void {
@@ -37,5 +41,11 @@ export class SearchComponent implements OnInit {
     if (res && res.tracks && res.tracks.items) {
       this.results = res.tracks.items;
     }
+  }
+
+  submit(query: string): void {
+    this.router
+      .navigate(['search'], { queryParams: { query: query } })
+      .then((_) => this.search());
   }
 }
