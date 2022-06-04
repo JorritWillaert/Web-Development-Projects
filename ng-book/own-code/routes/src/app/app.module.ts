@@ -9,6 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LoginComponent } from './login/login.component';
+import { ProtectedComponent } from './protected/protected.component';
+import { LoggedInGuardComponent } from './logged-in-guard/logged-in-guard.component';
 
 const routes: Routes = [
   // basic routes
@@ -35,7 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, LoginComponent, ProtectedComponent, LoggedInGuardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
