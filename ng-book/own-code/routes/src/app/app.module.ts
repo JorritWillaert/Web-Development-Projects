@@ -13,6 +13,11 @@ import { ProtectedComponent } from './protected/protected.component';
 import { LoggedInGuardComponent } from './logged-in-guard/logged-in-guard.component';
 
 import { AUTH_PROVIDERS } from './services/auth.service'; 
+import {
+  routes as childRoutes,
+  ProductsModule
+} from './products/products.module';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   // basic routes
@@ -31,11 +36,11 @@ const routes: Routes = [
   },
 
   // nested
-  // {
-  //   path: 'products',
-  //   component: ProductsComponent,
-  //   children: childRoutes,
-  // },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    children: childRoutes,
+  },
 ];
 
 @NgModule({
@@ -44,7 +49,7 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    // ProductsModule,
+    ProductsModule,
   ],
   providers: [
     // uncomment this for "hash-bang" routing
