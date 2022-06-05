@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { ProtectedComponent } from './protected/protected.component';
 import { LoggedInGuardComponent } from './logged-in-guard/logged-in-guard.component';
 
+import { AUTH_PROVIDERS } from './services/auth.service'; 
+
 const routes: Routes = [
   // basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,15 +22,15 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'contactus', redirectTo: 'contact' },
 
-  // // authentication demo
-  // { path: 'login', component: LoginComponent },
-  // {
-  //   path: 'protected',
-  //   component: ProtectedComponent,
-  //   canActivate: [LoggedInGuard],
-  // },
+  // authentication demo
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [LoggedInGuardComponent],
+  },
 
-  // // nested
+  // nested
   // {
   //   path: 'products',
   //   component: ProductsComponent,
@@ -47,8 +49,8 @@ const routes: Routes = [
   providers: [
     // uncomment this for "hash-bang" routing
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    //AUTH_PROVIDERS,
-    //LoggedInGuard,
+    AUTH_PROVIDERS,
+    LoggedInGuardComponent,
   ],
   bootstrap: [AppComponent],
 })
