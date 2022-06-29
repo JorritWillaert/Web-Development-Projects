@@ -110,3 +110,10 @@
 20220629	18:34:29	be21040c-25cf-4165-a0da-7e4b097aa5e2	GET	undefined	/refresh
 20220629	18:36:41	c4ae1d99-025d-489e-a4b8-3ed78e3a6afa	GET	undefined	/refresh
 20220629	18:36:43	8e3ef3b8-e5ee-4580-8f47-8ed27cf8f91e	GET	undefined	/refresh
+20220629	18:58:34	c0fbe314-05e3-47b7-aec1-95cca17f33e9	POST	undefined	/auth
+20220629	18:59:11	77d8d8b7-0da0-4c5f-a647-d0241a24bfbf	GET	undefined	/logout
+20220629	18:59:37	c9dde878-484e-4a22-bfa8-aeeb3226e058	GET	undefined	/logout
+20220629	18:59:48	20998f61-152b-455e-ade4-2bff05ef3020	GET	undefined	/refresh
+20220629	18:59:58	d86d13c7-bcae-407a-bcd0-03d53d6bbde3	POST	undefined	/auth
+20220629	19:00:02	5a657e69-3907-4508-81c0-33006a992e41	GET	undefined	/logout
+20220629	19:00:04	9540abc7-9ace-4891-92c0-f5955cce422f	GET	undefined	/refresh

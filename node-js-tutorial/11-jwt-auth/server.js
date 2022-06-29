@@ -5,8 +5,8 @@ const cors = require("cors");
 const corsOptions = require("./config/corsOptions");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
-const verifyJWT = require('./middleware/verifyJWT');
-const cookieParser = require('cookie-parser');
+const verifyJWT = require("./middleware/verifyJWT");
+const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3500;
 
 //  Custom middleware logger
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 
-app.use(cookieParser())
+app.use(cookieParser());
 
 // Serve static files
 app.use("/", express.static(path.join(__dirname, "/public")));
@@ -28,7 +28,8 @@ app.use("/", express.static(path.join(__dirname, "/public")));
 app.use("/", require("./routes/root"));
 app.use("/register", require("./routes/register"));
 app.use("/auth", require("./routes/auth"));
-app.use('/refresh', require('./routes/refresh'));
+app.use("/refresh", require("./routes/refresh"));
+app.use("/logout", require("./routes/logout"));
 
 // All other pages will require verification!
 app.use(verifyJWT);
