@@ -36,3 +36,13 @@
 20220629	11:53:32	532d448e-c1c4-427c-bb57-161c5d62daf8	GET	undefined	/img/img1.jpg
 20220629	11:53:41	4ae3eca2-4f41-42f8-945a-200feaa74175	GET	undefined	/index
 20220629	11:53:41	a1527aa2-9c56-46ab-8e13-9b6d10108c72	GET	undefined	/css/style.css
+20220629	13:12:48	d002fd74-7301-4e43-ad78-32232333160f	GET	undefined	/employees
+20220629	13:13:12	0afa07bd-2d6a-4c85-af19-619257ad92ff	GET	undefined	/employees
+20220629	13:14:11	a321c04c-40d3-4384-9fb8-76c26873622a	POST	undefined	/employees
+20220629	13:14:27	62589107-a817-4dd7-a37a-98001578156d	GET	undefined	/employees
+20220629	13:14:31	5ad877a1-e374-410f-92d4-fd1250123449	PUT	undefined	/employees
+20220629	13:15:08	37796745-1be0-4a98-862d-f3993ed3b423	DELETE	undefined	/employees
+20220629	13:15:21	586c787d-5f6c-4572-8b01-3810c8d08628	DELETE	undefined	/employees
+20220629	13:15:26	60302a03-9854-4f15-bc8a-97831ba26074	DELETE	undefined	/employees
+20220629	13:15:36	ffab5577-b0a1-41cb-8b67-38b93d07e94e	GET	undefined	/employees/1
+20220629	13:15:40	83220eb1-b642-48d7-bcf3-124ca4624581	GET	undefined	/employees/1
