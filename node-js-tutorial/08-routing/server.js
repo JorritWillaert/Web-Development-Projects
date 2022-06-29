@@ -35,6 +35,9 @@ app.use(express.json());
 // Serve static files
 app.use(express.static(path.join(__dirname, "/public")));
 
+// Route any routes for the subdirectory to the router
+app.use('/subdir', require('./routes/subdir'))
+
 app.get("^/$|/index(.html)?", (req, res) => {
   //res.sendFile('./views/index.html', { root: __dirname });
   res.sendFile(path.join(__dirname, "views", "index.html"));

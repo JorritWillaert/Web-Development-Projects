@@ -19,3 +19,7 @@
 20220629	11:19:03	98f2a1ec-2afe-4a7f-99c2-7f0eb429f304	GET	undefined	/css/style.css
 20220629	11:22:42	d17f8356-312c-434c-8bb7-27b27038ef5e	GET	undefined	/test
 20220629	11:22:42	e47601b6-a37e-4e00-aed1-a92cd3160c2f	GET	undefined	/css/style.css
+20220629	11:40:10	f35891c3-880b-48bd-bcd7-045c2b304c00	GET	undefined	/subdir
+20220629	11:40:23	736e8486-5d28-4d2a-959b-f2a0690fb102	GET	undefined	/subdir/test.html
+20220629	11:40:23	da2db760-4207-4b66-a266-a1d4ebeecd73	GET	undefined	/subdir/css/style.css
+20220629	11:42:19	dacb323d-bb92-4036-b17b-837373b298a0	GET	undefined	/subdir/test.html
