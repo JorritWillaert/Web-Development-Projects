@@ -12,6 +12,18 @@ const myEmitter = new Emitter();
 
 const PORT = process.env.PORT || 3500;
 
+const serveFile = async (filePath, contentType, response) => {
+  try {
+    const data = await fsPromises.readFile(filePath, 'utf8');
+    response.writeHead(200, {'Content-Type': contentType});
+    response.end(data);
+  } catch (err) {
+    console.log(err);
+    response.statusCode = 500;
+    response.end();
+  }
+}
+
 const server = http.createServer((req, res) => {
   console.log(req.url, req.method);
 
@@ -55,11 +67,21 @@ const server = http.createServer((req, res) => {
   const fileExists = fs.existsSync(filePath);
   
   if (fileExists) {
-    // Serve the file
+    serveFile(filePath, contentType, res);
   } else {
-    // 404
-    // 301 redirect
-    console.log(path.parse(filePath));
+    switch(path.parse(filePath).base) {
+      case 'old-page.html':
+        res.writeHead(301, {'Location': '/new-page.html'});
+        res.end();
+        break;
+      case 'www-page.html':
+        res.writeHead(301, {'Location': '/'});
+        res.end();
+        break;
+      default:
+        // Serve a 404 response
+        serveFile(path.join(__dirname, 'views', '404.html'), 'text/html', res);
+    }
   }
 });
 
