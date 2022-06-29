@@ -46,3 +46,4 @@
 20220629	13:15:26	60302a03-9854-4f15-bc8a-97831ba26074	DELETE	undefined	/employees
 20220629	13:15:36	ffab5577-b0a1-41cb-8b67-38b93d07e94e	GET	undefined	/employees/1
 20220629	13:15:40	83220eb1-b642-48d7-bcf3-124ca4624581	GET	undefined	/employees/1
+20220629	14:09:04	29c3cd5a-8caa-4b37-9840-3897bca287d3	GET	undefined	/employees
