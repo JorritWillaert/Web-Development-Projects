@@ -98,3 +98,6 @@
 20220629	17:24:35	cf4566c0-7b16-4012-a239-a5a284ac713d	POST	undefined	/auth
 20220629	17:24:41	3c211e1d-b382-4dc2-bcf2-2334d57f3942	GET	undefined	/employees
 20220629	17:25:14	dce5a51b-4db5-44e7-9f3b-2d0b41ea64d5	GET	undefined	/employees
+20220629	17:28:56	e6acae7e-6525-47a1-a24d-2f63578d7ae5	POST	undefined	/employees
+20220629	17:29:04	95cca91f-5714-40a8-95d1-ab22ef7d7f01	POST	undefined	/auth
+20220629	17:29:20	393a3027-4856-4d4e-af43-f8817469597d	POST	undefined	/employees
