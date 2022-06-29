@@ -1,0 +1,2 @@
+20220629	11:17:11	273a7802-172a-4709-aeb6-821655482146	Error: Not allowed by CORS
+20220629	13:15:21	194e4497-364c-4d3b-b9f3-4aecb1d1eb38	SyntaxError: Unexpected token i in JSON at position 1
