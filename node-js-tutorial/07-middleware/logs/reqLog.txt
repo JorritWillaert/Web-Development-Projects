@@ -2,3 +2,8 @@
 20220629	10:30:53	081f4b2d-ffee-4318-9fbf-dc482d01d8f5	GET	undefined	/css/style.css
 20220629	10:33:37	5a8eb726-d91f-4953-b800-4ac669eebc58	GET	undefined	/
 20220629	10:33:37	c76fd558-edab-41ba-89cd-1a4a56cce648	GET	undefined	/css/style.css
+20220629	10:35:22	c31e3fe8-4e9b-4648-bc5f-3dddd04eafa7	GET	https://www.google.be	/
+20220629	10:36:31	26162300-95dc-4d13-aa73-d0776ec8413d	GET	https://www.google.be	/
+20220629	10:37:23	4d8f5e8f-9364-4e75-ab1f-ed374f4f07f6	GET	https://www.google.be	/
+20220629	10:43:29	a50b9f40-a5c2-4682-8007-806553e4cc20	GET	https://winergie.be	/
+20220629	10:43:48	69b1073b-246f-4f58-8b56-9d9655aa85b2	GET	https://winergie.be	/
