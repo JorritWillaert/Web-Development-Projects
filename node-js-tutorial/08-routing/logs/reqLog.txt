@@ -23,3 +23,16 @@
 20220629	11:40:23	736e8486-5d28-4d2a-959b-f2a0690fb102	GET	undefined	/subdir/test.html
 20220629	11:40:23	da2db760-4207-4b66-a266-a1d4ebeecd73	GET	undefined	/subdir/css/style.css
 20220629	11:42:19	dacb323d-bb92-4036-b17b-837373b298a0	GET	undefined	/subdir/test.html
+20220629	11:46:24	0796c001-ac8c-4ff2-941f-b6d4437c8c4e	GET	undefined	/subdir/test.html
+20220629	11:46:29	bcd49720-67f6-4ac9-831b-b3b381a1f98e	GET	undefined	/subdir/jorrit
+20220629	11:46:29	21e9aa26-3766-43d2-978c-f993204b759b	GET	undefined	/subdir/css/style.css
+20220629	11:53:13	ff3256b3-fc24-4082-bb8a-d2cd13bf57ce	GET	undefined	/
+20220629	11:53:13	0920790c-dcb8-41e2-a455-385541da8090	GET	undefined	/css/style.css
+20220629	11:53:27	7b53494f-bc66-40c8-a788-88d775e5eab5	GET	undefined	/new-page
+20220629	11:53:27	163c1c6e-837e-44ac-888e-0d204f48bb64	GET	undefined	/css/style.css
+20220629	11:53:27	285cb72b-7cd5-4083-aa04-af0a30bfad82	GET	undefined	/img/img1.jpg
+20220629	11:53:32	e90e1447-167d-4926-994c-363a70a86fab	GET	undefined	/new-page.html
+20220629	11:53:32	54dc65d3-1481-4324-a4ce-7f7c8c09d50e	GET	undefined	/css/style.css
+20220629	11:53:32	532d448e-c1c4-427c-bb57-161c5d62daf8	GET	undefined	/img/img1.jpg
+20220629	11:53:41	4ae3eca2-4f41-42f8-945a-200feaa74175	GET	undefined	/index
+20220629	11:53:41	a1527aa2-9c56-46ab-8e13-9b6d10108c72	GET	undefined	/css/style.css
