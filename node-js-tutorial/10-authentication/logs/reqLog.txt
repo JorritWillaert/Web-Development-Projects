@@ -57,3 +57,9 @@
 20220629	14:15:00	6708fe02-53a6-4631-9448-67862cd4fb17	GET	undefined	/employees/1
 20220629	14:15:04	b08a967d-9f85-4ff0-a8d7-a0ac148dbcb1	GET	undefined	/employees
 20220629	14:17:29	028f9232-c020-4541-a708-689b0f550f66	GET	undefined	/employees/1
+20220629	15:23:42	b1010148-c7df-49a0-90f5-7a8bdae8d8cf	GET	undefined	/
+20220629	15:23:42	f9b0ce50-fec2-41c2-b0be-725341ac4654	GET	undefined	/css/style.css
+20220629	15:25:44	8b28fbe7-5bc5-4dd6-9944-6bff83475e54	POST	undefined	/register
+20220629	15:26:51	999b73cb-cf7d-4a3f-a9d2-25fb09aeedd4	POST	undefined	/register
+20220629	15:28:13	0a28e9d3-2573-4d26-ba1c-291cce3ded0d	POST	undefined	/register
+20220629	15:28:49	aae6c454-58ec-4056-a7da-2d5400d47169	POST	undefined	/register
