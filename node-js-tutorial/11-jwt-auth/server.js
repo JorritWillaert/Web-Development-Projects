@@ -20,12 +20,15 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 
+app.use(cookieParser())
+
 // Serve static files
 app.use("/", express.static(path.join(__dirname, "/public")));
 
 app.use("/", require("./routes/root"));
 app.use("/register", require("./routes/register"));
 app.use("/auth", require("./routes/auth"));
+app.use('/refresh', require('./routes/refresh'));
 
 // All other pages will require verification!
 app.use(verifyJWT);
