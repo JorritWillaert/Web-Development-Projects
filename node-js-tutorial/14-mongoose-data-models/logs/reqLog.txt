@@ -141,3 +141,10 @@
 20220630	16:59:23	1ad6f407-708d-4290-935e-678c05988752	POST	undefined	/employees
 20220630	16:59:30	229ee727-ca0d-4d9b-aa56-0a59d086853b	DELETE	undefined	/employees
 20220630	17:00:34	a2019a5a-9271-48e3-be57-3c7b06ad48bd	GET	undefined	/refresh
+20220630	17:59:58	943c8c18-6b2e-4548-8a63-b00bcaa034a4	POST	undefined	/register
+20220630	18:00:51	041066b6-5d7e-49b1-9455-b847cb0ca541	POST	undefined	/register
+20220630	18:01:57	867f5f9b-a6a3-4a12-9d1b-23febd5ac0e9	POST	undefined	/register
+20220630	18:02:09	3b44ded2-8c1d-4983-8a99-eae51a91a820	POST	undefined	/register
+20220630	18:02:32	a52614ca-fd4e-442d-b76f-71926ffae009	POST	undefined	/register
+20220630	18:04:54	63fff954-7c11-42c9-9207-8d300384f9e2	POST	undefined	/register
+20220630	18:04:58	2459271e-a95a-4167-9dcb-1f7c0d8eb277	POST	undefined	/register

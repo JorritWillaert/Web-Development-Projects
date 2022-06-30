@@ -7,7 +7,7 @@ const userSchema = new Schema({
     required: true,
   },
   roles: {
-    user: {
+    User: {
       type: Number,
       default: 2001,
     },
