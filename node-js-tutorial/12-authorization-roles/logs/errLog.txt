@@ -4,3 +4,5 @@
 20220629	17:07:36	5fedc424-6f8c-4550-b052-f88ec40a0728	TokenExpiredError: jwt expired
 20220629	17:08:14	8fac9e35-4bb7-461f-8f5d-6ed3c58b6f45	TokenExpiredError: jwt expired
 20220629	17:14:34	91b29fcd-38e2-4e99-99a0-7a4fd0de668a	TokenExpiredError: jwt expired
+20220630	16:50:31	3b81a612-776c-4ef0-99d4-9dc26cd913b7	ReferenceError: whitelist is not defined
+20220630	16:55:54	2ebe7948-c4f9-40c4-bd41-45f86a4b7230	ReferenceError: role is not defined
