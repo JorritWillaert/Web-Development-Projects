@@ -6,3 +6,4 @@
 20220629	17:14:34	91b29fcd-38e2-4e99-99a0-7a4fd0de668a	TokenExpiredError: jwt expired
 20220630	16:50:31	3b81a612-776c-4ef0-99d4-9dc26cd913b7	ReferenceError: whitelist is not defined
 20220630	16:55:54	2ebe7948-c4f9-40c4-bd41-45f86a4b7230	ReferenceError: role is not defined
+20220701	08:55:32	c871d474-949d-4cf2-bde1-57ef16c01f47	SyntaxError: Unexpected token b in JSON at position 9

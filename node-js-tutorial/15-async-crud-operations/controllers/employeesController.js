@@ -41,9 +41,6 @@ const updateEmployee = async (req, res) => {
   if (req.body?.lastname) {
     employee.lastname = req.body.lastname;
   }
-  const filteredArray = data.employees.filter(
-    (emp) => emp.id != parseInt(req.body.id)
-  );
   const result = await employee.save();
   res.json(result);
 };
@@ -58,8 +55,8 @@ const deleteEmployee = async (req, res) => {
       .status(204)
       .json({ message: `No employee matches ID ${req.body.id}.` });
   }
-  const result = await employee.deleteOne({ _id: req.body.id });
-  res.json(data.employees);
+  const result = await employee.deleteOne();
+  res.json(result);
 };
 
 const getEmployee = async (req, res) => {
