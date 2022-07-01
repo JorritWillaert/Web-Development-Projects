@@ -39,8 +39,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Content items={items} setItems={setItems} handleCheck={handleCheck} handleDelete={handleDelete} />
-      <Footer />
+      <Content
+        items={items}
+        handleCheck={handleCheck}
+        handleDelete={handleDelete}
+      />
+      <Footer length={items.length} />
     </div>
   );
 }
