@@ -1,13 +1,14 @@
 import React from "react";
 
-const Square = ({ color }) => {
+const Square = ({ color, hexValue }) => {
   const lowerCaseColor = color.toLowerCase();
   const correctColor = CSS.supports("color", lowerCaseColor)
     ? lowerCaseColor
     : "";
   return (
     <div className="square" style={{ background: correctColor }}>
-      {correctColor ? correctColor : "Empty Value"}
+      <p>{correctColor ? correctColor : "Empty Value"}</p>
+      <p>{hexValue ? hexValue : null}</p>
     </div>
   );
 };

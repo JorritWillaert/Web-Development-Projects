@@ -4,11 +4,12 @@ import { useState } from "react";
 
 function App() {
   const [color, setColor] = useState("");
+  const [hexValue, setHexValue] = useState("");
 
   return (
     <div className="App">
-      <Square color={color} />
-      <Input color={color} setColor={setColor} />
+      <Square color={color} hexValue={hexValue} />
+      <Input color={color} setColor={setColor} setHexValue={setHexValue} />
     </div>
   );
 }
