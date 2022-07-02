@@ -12,12 +12,12 @@
     },
     {
       "id": 3,
-      "checked": false,
+      "checked": true,
       "item": "Bread"
     },
     {
       "id": 4,
-      "checked": false,
+      "checked": true,
       "item": "Cookies"
     }
   ]
