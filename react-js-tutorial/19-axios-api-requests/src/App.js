@@ -52,7 +52,7 @@ function App() {
     const datetime = format(new Date(), "MMMM dd, yyyy pp");
     const newPost = { id, title: postTitle, datetime, body: postBody };
     try {
-      const response = await api.post('/posts', newPost);
+      const response = await api.post("/posts", newPost);
       const allPosts = [...posts, response.data];
       setPosts(allPosts);
       setPostTitle("");
@@ -63,10 +63,15 @@ function App() {
     }
   };
 
-  const handleDelete = (id) => {
-    const postsList = posts.filter((post) => post.id !== id);
-    setPosts(postsList);
-    navigate("/");
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/posts//${id}`);
+      const postsList = posts.filter((post) => post.id !== id);
+      setPosts(postsList);
+      navigate("/");
+    } catch (err) {
+      console.log(`Error: ${err.message}`);
+    }
   };
 
   return (
@@ -89,11 +94,10 @@ function App() {
               />
             }
           />
-          <Route path=":id">
-            <Route
-              element={<PostPage posts={posts} handleDelete={handleDelete} />}
-            />
-          </Route>
+          <Route
+            path=":id"
+            element={<PostPage posts={posts} handleDelete={handleDelete} />}
+          />
         </Route>
         <Route path="about" element={<About />} />
         <Route path="*" element={<Missing />} />
