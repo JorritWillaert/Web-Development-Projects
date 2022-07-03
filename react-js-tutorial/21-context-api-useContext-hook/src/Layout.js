@@ -8,12 +8,12 @@ import { DataProvider } from "./context/DataContext";
 const Layout = () => {
   return (
     <div className="App">
+      <Header title="React JS Blog" />
       <DataProvider>
-        <Header title="React JS Blog" />
         <Nav />
         <Outlet />
-        <Footer />
       </DataProvider>
+      <Footer />
     </div>
   );
 };
