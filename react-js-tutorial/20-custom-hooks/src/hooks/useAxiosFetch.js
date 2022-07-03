@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { axios } from "axios";
+import axios from "axios";
 
 const useAxiosFetch = (dataUrl) => {
   const [data, setData] = useState([]);
@@ -26,14 +26,13 @@ const useAxiosFetch = (dataUrl) => {
           setData([]);
         }
       } finally {
-        isMounted && setTimeout(() => setIsLoading(false), 2000);
+        isMounted && setIsLoading(false);
       }
     };
 
     fetchData(dataUrl);
 
     const cleanUp = () => {
-      console.log("Clean up function");
       isMounted = false;
       source.cancel();
     };
