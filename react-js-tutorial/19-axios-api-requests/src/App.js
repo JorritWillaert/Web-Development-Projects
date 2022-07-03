@@ -68,7 +68,7 @@ function App() {
 
   const handleEdit = async (id) => {
     const datetime = format(new Date(), "MMMM dd, yyyy pp");
-    const updatedPost = { id, title: editBody, datetime, body: editBody };
+    const updatedPost = { id, title: editTitle, datetime, body: editBody };
     try {
       const response = await api.put(`/posts/${id}`, updatedPost);
       setPosts(
