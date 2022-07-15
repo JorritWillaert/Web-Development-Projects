@@ -1,0 +1,38 @@
+* {
+  font-family: monospace;
+}
+
+body {
+  font-size: 22px;
+}
+
+main {
+  /* font-family: monospace; */
+}
+
+h1,
+h2 {
+  color: blue;
+}
+
+.gray {
+  color: gray;
+}
+
+p {
+  /* You can use !important, but better don't! */
+  color: purple;
+}
+
+p {
+  color: red;
+}
+
+.highlight {
+  text-transform: uppercase;
+  background-color: gold;
+}
+
+#second {
+  font-style: italic;
+}
