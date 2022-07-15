@@ -1,0 +1,22 @@
+body {
+  padding: 10%;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace; /* If computer does not have Courier New, then use Courier, otherwise monospace */
+  /* sans-serif used a lot in web pages */
+}
+
+/* input,
+button {
+  font: inherit;
+} */
+
+p {
+  text-indent: 2em;
+  text-align: justify;
+  text-transform: capitalize;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+  font-weight: 100; /* 300-400 is quite normal */
+  font-style: italic;
+}
