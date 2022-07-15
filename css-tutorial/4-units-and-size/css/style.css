@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 50%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1 {
+  border: 2px dashed red;
+  width: 50%;
+  font-size: 3rem;
+  padding: 0.5em;
+}
+
+main {
+  width: 50vw;
+  background-color: skyblue;
+  font-size: 2rem;
+}
+
+p {
+  /* font-size: 1rem; This is the standard size of the root */
+  font-size: 2em; /* Better to use rem */
+  width: 40ch;
+}
