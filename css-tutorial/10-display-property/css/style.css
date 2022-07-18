@@ -1,7 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+* {
+  margin: 0;
+  body: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
 }
 
+p {
+  background-color: lightgray;
+}
+
+.opposite {
+  background-color: #333;
+  color: whitesmoke;
+  padding: 4rem;
+  display: inline-block;
+  margin-top: 100px;
+  height: 200px;
+}
+
+ul {
+  /* display: none; Not recommended for hiding things */
+  list-style-type: none;
+  padding: 0.5rem;
+  text-align: right;
+  background-color: black;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  margin-inline: 0.5rem;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li a:hover,
+li a:focus {
+  text-decoration: underline;
+}
