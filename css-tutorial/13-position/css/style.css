@@ -25,6 +25,7 @@ body {
   width: 40vw;
   height: 50vh;
   margin: 200px auto;
+  /* position: relative; Box picks the closest container */
 }
 
 .box {
@@ -32,4 +33,32 @@ body {
   height: 150px;
   color: #fff;
   padding: 1rem;
+}
+
+.absolute {
+  background-color: #00f;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* left: -10000px; Used to remove something from the screen, and is still on the page for screen readers */
+  z-index: 1; /* Moves it to the front, i.e. before the green block */
+}
+
+.relative {
+  background-color: #f00;
+  position: relative;
+  top: 300px;
+  left: 100px;
+}
+
+.fixed {
+  background-color: green;
+  position: fixed;
+  top: 100px; /* 100 px from top of screen, even if we scroll */
+}
+
+.sticky {
+  background-color: #000;
+  position: sticky;
+  top: 0; /* Scrolls off the page once the inner container leaves the page */
 }
