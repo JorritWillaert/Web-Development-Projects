@@ -26,6 +26,11 @@ img {
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
+  background-color: aliceblue;
+  background-image: url("../img/bubbles.png"), linear-gradient(to left, steelblue, purple, #fff);
+  background-repeat: repeat-y, no-repeat;
+  background-position: right center;
+  background-size: 20%, auto;
 }
 
 .container {
