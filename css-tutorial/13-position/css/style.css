@@ -62,3 +62,59 @@ body {
   position: sticky;
   top: 0; /* Scrolls off the page once the inner container leaves the page */
 }
+
+/* Part 2 */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+}
+
+.blue {
+  background-color: #00f;
+}
+
+.red {
+  background-color: #f00;
+}
+
+.green {
+  background-color: green;
+}
+
+header, footer {
+  color: #fff;
+  text-align: center;
+  height: 100px;
+}
+
+header {
+  font-size: 5rem;
+  position: sticky;
+  top: 0;
+}
+
+footer {
+  background-color: #000;
+  position: sticky;
+  bottom: 0;
+  font-size: 3rem;
+}
+
+a:visited {
+  color: #fff;
+}
+
+.social {
+  background-color: royalblue;
+  color: #fff;
+  font-size: inherit;
+  padding: 1rem;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 1;
+}
