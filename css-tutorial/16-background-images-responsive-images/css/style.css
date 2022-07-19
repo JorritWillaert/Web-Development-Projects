@@ -27,7 +27,8 @@ body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
   background-color: aliceblue;
-  background-image: url("../img/bubbles.png"), linear-gradient(to left, steelblue, purple, #fff);
+  background-image: url("../img/bubbles.png"),
+    linear-gradient(to left, steelblue, purple, #fff);
   background-repeat: repeat-y, no-repeat;
   background-position: right center;
   background-size: 20%, auto;
@@ -82,4 +83,16 @@ body {
 .example img {
   width: 25%;
   height: auto;
+}
+
+.clip {
+  font-weight: 800;
+  font-size: 18rem;
+  text-align: center;
+  background-image: url("../img/scenic-2200x1331.png");
+  background-size: 100%;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  background-clip: text; /* Required for Firefox */
+  color: hsla(0, 0%, 0%, 0.2);
 }
