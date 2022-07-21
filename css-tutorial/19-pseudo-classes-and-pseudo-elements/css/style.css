@@ -38,6 +38,7 @@ footer {
   background-color: #1e293b;
   color: whitesmoke;
   text-align: center;
+  z-index: 1;
 }
 
 header {
@@ -53,14 +54,17 @@ nav {
   justify-content: space-evenly;
 }
 
-nav a,
-nav a:visited {
+/* Pseudo-classes, talk about the state of an object */
+nav a:any-link {
   color: #000;
 }
 
-nav a:hover,
-nav a:focus {
+nav :is(a:hover, a:focus) {
   color: hsla(0, 0%, 20%, 0.6);
+}
+
+nav a:active {
+  color: red;
 }
 
 main {
@@ -89,6 +93,10 @@ footer {
   align-items: center;
 }
 
+.card:target {
+  border: 2px solid rebeccapurple;
+}
+
 .card figure {
   display: flex;
   flex-flow: column nowrap;
@@ -99,11 +107,49 @@ footer {
   border-radius: 50%;
 }
 
+/* Check which images we forgot to put an alt tag on */
+.card img:not([alt]) {
+  border: 10px solid red;
+}
+
+.card:nth-child(odd) {
+  background-color: papayawhip;
+}
+
 .card figcaption {
   font-weight: bolder;
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
+}
+
+.card figcaption::after {
+  content: '✨';
+  display: block;
+}
+
+.card figcaption::first-letter {
+  font-size: 3rem;
+}
+
+.card p {
+  position: relative;
+}
+
+.card p::before {
+  content: open-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  left: -0.5em;
+}
+
+.card p::after {
+  content: close-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  right: -0.5em;
 }
 
 /* || SMALL */
