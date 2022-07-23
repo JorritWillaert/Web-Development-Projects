@@ -43,6 +43,7 @@ textarea {
   --NAV-BGCOLOR: #fff;
   --HERO-BGCOLOR: rgba(51, 178, 51, 0.75);
   --HERO-COLOR: #fff;
+  --BUTTON-COLOR: #fff;
 
   /* BORDERS */
   --BORDERS: 1px solid var(--BORDER-COLOR);
@@ -54,6 +55,24 @@ textarea {
 
   /* STANDARD MARGIN */
   --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --BG-COLOR: #000;
+    --BG-COLOR-FADE: gray;
+    --HEADER-COLOR: whitesmoke;
+    --NAV-BGCOLOR: rgb(20, 20, 20);
+    --HERO-COLOR: #333;
+    --BODY-BGCOLOR: #333;
+    --FONT-COLOR: whitesmoke;
+    --HIGHLIGHT-COLOR: whitesmoke;
+    --BORDER-COLOR: whitesmoke;
+    --LINK-COLOR: whitesmoke;
+    --LINK-HOVER: orange;
+    --LINK-ACTIVE: rgb(252, 200, 103);
+    --BUTTON-COLOR: #000;
+  }
 }
 
 /* UTILITY CLASSES */
@@ -247,7 +266,7 @@ a:active {
   padding: 0.5em;
   border-radius: var(--BORDER-RADIUS);
   background-color: var(--HIGHLIGHT-COLOR);
-  color: var(--HEADER-COLOR);
+  color: var(--BUTTON-COLOR);
 }
 
 /* MENU */
@@ -320,4 +339,21 @@ thead th:last-child {
 tfoot td {
   border-bottom-left-radius: var(--BORDER-RADIUS);
   border-bottom-right-radius: var(--BORDER-RADIUS);
+}
+
+@media screen and (min-width: 576px) {
+  .header__h1::before {
+    content: "🌮 ";
+  }
+
+  .header__h1::after {
+    content: " 🌮";
+  }
+
+  .menu__header,
+  .menu__cr,
+  .menu__sf,
+  .menu__cs {
+    font-size: 125%;
+  }
 }
