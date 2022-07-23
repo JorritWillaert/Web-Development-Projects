@@ -267,6 +267,7 @@ a:active {
   border-radius: var(--BORDER-RADIUS);
   background-color: var(--HIGHLIGHT-COLOR);
   color: var(--BUTTON-COLOR);
+  font-weight: bold;
 }
 
 /* MENU */
