@@ -16,6 +16,16 @@ const theme = {
 };
 
 const App = () => {
+  const [loaded] = useFonts({
+    InterBold: require("./assets/fonts/Inter-Bold.ttf"),
+    InterSemiBold: require("./assets/fonts/Inter-SemiBold.ttf"),
+    InterMedium: require("./assets/fonts/InterMedium.ttf"),
+    InterRegular: require("./assets/fonts/InterRegular.ttf"),
+    InterLight: require("./assets/fonts/InterLight.ttf"),
+  })
+
+  if (!loaded) return null;
+
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
