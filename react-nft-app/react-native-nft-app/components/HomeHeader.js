@@ -2,7 +2,7 @@ import { View, Text, Image, TextInput } from "react-native";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
-const HomeHeader = () => {
+const HomeHeader = ({ onSearch }) => {
   return (
     <View
       style={{
@@ -67,7 +67,17 @@ const HomeHeader = () => {
         </Text>
       </View>
       <View style={{ marginTop: SIZES.font }}>
-        <View style={{width: '100%', borderRadius: SIZES.font, backgroundColor: COLORS.gray, flexDirection: 'row', alignItems: 'center', paddingHorizontal: SIZES.font, paddingVertical: SIZES.small - 2}}>
+        <View
+          style={{
+            width: "100%",
+            borderRadius: SIZES.font,
+            backgroundColor: COLORS.gray,
+            flexDirection: "row",
+            alignItems: "center",
+            paddingHorizontal: SIZES.font,
+            paddingVertical: SIZES.small - 2,
+          }}
+        >
           <Image
             source={assets.search}
             resizeMode="contain"
@@ -76,7 +86,7 @@ const HomeHeader = () => {
           <TextInput
             placeholder="Search NFT's"
             style={{ flex: 1 }}
-            onChangeText={() => {}}
+            onChangeText={onSearch}
           />
         </View>
       </View>
