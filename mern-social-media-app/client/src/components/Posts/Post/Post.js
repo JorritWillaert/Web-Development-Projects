@@ -1,5 +1,4 @@
 import React from "react";
-
 import useStyles from "./styles.js";
 
 const Post = () => {
