@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   Avatar,
   Button,
@@ -13,11 +14,13 @@ import Icon from "./Icon.js";
 import useStyles from "./styles.js";
 import { GoogleLogin } from "react-google-login";
 import { CLIENT_ID } from "../../secrets.js";
+import { AUTH } from "../../constants/actionTypes.js";
 
 const Auth = () => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const dispatch = useDispatch();
 
   const handleSubmit = () => {};
 
@@ -33,7 +36,14 @@ const Auth = () => {
   };
 
   const googleSuccess = async (res) => {
-    console.log(res);
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const googleFailure = (error) => {
