@@ -14,19 +14,39 @@ import Input from "./Input.js";
 import Icon from "./Icon.js";
 import useStyles from "./styles.js";
 import { GoogleLogin } from "react-google-login";
+import { signin, signup } from "../../actions/auth.js";
 import { CLIENT_ID } from "../../secrets.js";
 import { AUTH } from "../../constants/actionTypes.js";
+
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 const Auth = () => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleChange = () => {};
+    if (isSignUp) {
+      dispatch(signup(formData, navigate));
+    } else {
+      dispatch(signin(formData, navigate));
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
