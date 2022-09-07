@@ -24,7 +24,7 @@ contract SimpleStorage {
     // address myAddress = 0xE8eABad0B502ba1cfaf01904a78037435dD148F7;
     // bytes32 favoriteBytes = "cat"; //e.g. 0x982fad3
 
-    function store(uint256 _favoriteNumber) public {
+    function store(uint256 _favoriteNumber) public virtual {
         favoriteNumber = _favoriteNumber;
     }
 
