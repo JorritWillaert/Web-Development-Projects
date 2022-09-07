@@ -7,6 +7,8 @@ contract SimpleStorage {
     
     uint256 public favoriteNumber; // Defaults to 0
     // Default visibility = 'internal'
+
+    mapping(string => uint256) public nameToFavoriteNumber;
     
     // People public person = People({favoriteNumber: 2, name: "Jorrit"});
     People[] public people;
@@ -34,5 +36,6 @@ contract SimpleStorage {
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         People memory newPerson = People({favoriteNumber: _favoriteNumber, name: _name});
         people.push(newPerson);
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
