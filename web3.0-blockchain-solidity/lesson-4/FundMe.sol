@@ -10,7 +10,7 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 // Note: contract has a wallet as well
 contract FundMe {
     uint256 public number;
-    uint256 public minimumUsd = 50;
+    uint256 public minimumUsd = 50 * 1e18;
 
     function fund() public payable {
         number = 5; // Will be reverted if require is not met
@@ -18,7 +18,7 @@ contract FundMe {
 
         // Want to be able to set a minimum fund amount in USD
         // 1. How do we send ETH to this contract?
-        require(msg.value >= minimumUsd, "Didn't send enough"); // 1e18 Wei == 1 ETH
+        require(getConversionRate(msg.value) >= minimumUsd, "Didn't send enough"); // 1e18 Wei == 1 ETH
         // Note: in a blockchain, you can't make an HTTPS call
     }
 
@@ -30,7 +30,11 @@ contract FundMe {
         return uint256(price * 1e10);
     }
 
-    function getConversionRate() public {}
+    function getConversionRate(uint256 ethAmount) public view returns (uint256) {
+        uint256 ethPrice = getPrice();
+        uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1e18;
+        return ethAmountInUsd;
+    }
 
     // function withdraw() {}
 }
