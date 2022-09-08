@@ -5,6 +5,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
 // Note: contract has a wallet as well
 contract FundMe {
     uint256 public number;
@@ -19,6 +21,16 @@ contract FundMe {
         require(msg.value >= minimumUsd, "Didn't send enough"); // 1e18 Wei == 1 ETH
         // Note: in a blockchain, you can't make an HTTPS call
     }
+
+    function getPrice() public view returns (uint256) {
+        // ABI 
+        // Address 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419);
+        (,int256 price,,,) = priceFeed.latestRoundData();
+        return uint256(price * 1e10);
+    }
+
+    function getConversionRate() public {}
 
     // function withdraw() {}
 }
