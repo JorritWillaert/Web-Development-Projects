@@ -10,7 +10,10 @@ library PriceConverter {
         // Address 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419);
         (,int256 price,,,) = priceFeed.latestRoundData();
-        return uint256(price * 1e10);
+        uint8 numberOfDecimals = priceFeed.decimals();
+        int256 factor = int256(10 ** (18-numberOfDecimals));
+        // There seems to be some kind of issue with the conversion - not yet resolved
+        return uint256(price * factor);
     }
 
     function getConversionRate(uint256 ethAmount) internal view returns (uint256) {
