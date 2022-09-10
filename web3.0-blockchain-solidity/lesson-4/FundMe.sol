@@ -8,20 +8,22 @@ pragma solidity ^0.8.8;
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
 
+error NotOwner();
+
 // Note: contract has a wallet as well
 contract FundMe {
     using PriceConverter for uint256;
 
     uint256 public number;
-    uint256 public minimumUsd = 50 * 1e18;
+    uint256 public constant MINIMUM_USD = 50 * 1e18;
 
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
-    address public owner;
+    address public immutable i_owner;
 
     constructor() {
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() public payable {
@@ -30,7 +32,7 @@ contract FundMe {
 
         // Want to be able to set a minimum fund amount in USD
         // 1. How do we send ETH to this contract?
-        require(msg.value.getConversionRate() >= minimumUsd, "Didn't send enough"); // 1e18 Wei == 1 ETH
+        require(msg.value.getConversionRate() >= MINIMUM_USD, "Didn't send enough"); // 1e18 Wei == 1 ETH
         // Note: in a blockchain, you can't make an HTTPS call
         // Note 2: msg.value is considered the first value for the library function
 
@@ -65,9 +67,23 @@ contract FundMe {
 
     modifier onlyOwner {
         // Pre testing
-        require(msg.sender == owner, "Sender is not owner!");
+        // require(msg.sender == i_owner, "Sender is not owner!");
+        // A little more gas efficient
+        if (msg.sender != i_owner) {
+            revert NotOwner();
+        }
         _; // Do the rest of the code
 
         // Here, you could also add some post testing
+    }
+
+    // What happens if someone sends this contract ETH without calling the fund function?
+    // Then it would simply go to the contract, and we wouln't keep track of who sended it.
+    receive() external payable {
+        fund();
+    }
+    
+    fallback() external payable {
+        fund();
     }
 }
