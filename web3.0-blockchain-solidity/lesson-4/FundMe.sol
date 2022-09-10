@@ -5,10 +5,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
 
 // Note: contract has a wallet as well
 contract FundMe {
+    using PriceConverter for uint256;
+    
     uint256 public number;
     uint256 public minimumUsd = 50 * 1e18;
 
@@ -24,7 +27,7 @@ contract FundMe {
         require(msg.value.getConversionRate() >= minimumUsd, "Didn't send enough"); // 1e18 Wei == 1 ETH
         // Note: in a blockchain, you can't make an HTTPS call
         // Note 2: msg.value is considered the first value for the library function
-        
+
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = msg.value;
     }
