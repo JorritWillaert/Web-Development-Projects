@@ -18,6 +18,12 @@ contract FundMe {
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
     function fund() public payable {
         number = 5; // Will be reverted if require is not met
         // You have to pay everything before require (because needs to be reverted). Everything after will not be billed.
@@ -32,7 +38,10 @@ contract FundMe {
         addressToAmountFunded[msg.sender] = msg.value;
     }
 
-    function withdraw() public {
+    // Note: may only be called by the owner of the contract
+    function withdraw() public onlyOwner {
+        // require(msg.sender == owner, "Sender is not owner!"); Note: there is a better way with a modifier
+
         /* starting index, ending index, step amount */
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
             address funder = funders[funderIndex];
@@ -52,5 +61,13 @@ contract FundMe {
         // 3. Call; Recommended way at this time
         (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed");
+    }
+
+    modifier onlyOwner {
+        // Pre testing
+        require(msg.sender == owner, "Sender is not owner!");
+        _; // Do the rest of the code
+
+        // Here, you could also add some post testing
     }
 }
