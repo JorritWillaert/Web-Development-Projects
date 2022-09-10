@@ -4,7 +4,7 @@ const fs = require("fs-extra");
 async function main() {
   // http://127.0.0.1:7545
   const provider = new ethers.providers.JsonRpcProvider(
-    "http:////127.0.0.1:7545"
+    "http://127.0.0.1:7545"
   );
   const privateKey = new ethers.Wallet.fromMnemonic(
     "cousin across swim harvest obtain perfect crawl huge lock muffin survey parade"
@@ -15,6 +15,10 @@ async function main() {
     "./SimpleStorage_sol_SimpleStorage.bin",
     "utf8"
   );
+  const contractFactory = new ethers.ContractFactory(abi, binary, wallet);
+  console.log("Deploying contract...");
+  const contract = await contractFactory.deploy();
+  console.log(contract);
 }
 
 main()
