@@ -25,12 +25,13 @@ async function main() {
   // const privateKey = new ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
   //   .privateKey; // Sharing this menmonic is fine, it's just locally used for testing
   // const wallet = new ethers.Wallet(privateKey, provider);
-  const encryptedJson = fs.readFileSync("./encryptedKey.json", "utf8");
-  let wallet = new ethers.Wallet.fromEncryptedJsonSync(
-    encryptedJson,
-    process.env.PRIVATE_KEY_PASSWORD
-  );
-  wallet = await wallet.connect(provider);
+  // const encryptedJson = fs.readFileSync("./encryptedKey.json", "utf8");
+  // let wallet = new ethers.Wallet.fromEncryptedJsonSync(
+  //   encryptedJson,
+  //   process.env.PRIVATE_KEY_PASSWORD
+  // );
+  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+  // wallet = await wallet.connect(provider);
   const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8");
   const binary = fs.readFileSync(
     "./SimpleStorage_sol_SimpleStorage.bin",
@@ -40,7 +41,7 @@ async function main() {
   console.log("Deploying contract...");
   const contract = await contractFactory.deploy();
   const deploymentReceipt = await contract.deployTransaction.wait(1); // Number of confirmations to wait for
-  console.log(deploymentReceipt);
+  console.log("Contract deployed to:", contract.address);
 
   // deployManualContract();
 
