@@ -1,5 +1,6 @@
 const ethers = require("ethers");
 const fs = require("fs-extra");
+require("dotenv").config();
 
 async function deployManualContract() {
   // console.log("Let's deploy with only transaction data!");
@@ -20,12 +21,9 @@ async function deployManualContract() {
 
 async function main() {
   // http://127.0.0.1:7545
-  const provider = new ethers.providers.JsonRpcProvider(
-    "http://127.0.0.1:7545"
-  );
-  const privateKey = new ethers.Wallet.fromMnemonic(
-    "cousin across swim harvest obtain perfect crawl huge lock muffin survey parade"
-  ).privateKey; // Sharing this menmonic is fine, it's just locally used for testing
+  const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
+  const privateKey = new ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
+    .privateKey; // Sharing this menmonic is fine, it's just locally used for testing
   const wallet = new ethers.Wallet(privateKey, provider);
   const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8");
   const binary = fs.readFileSync(
