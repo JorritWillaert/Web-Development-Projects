@@ -18,7 +18,7 @@ export default {
       type: "string",
     },
     {
-      slug: "slug",
+      name: "slug",
       title: "Slug",
       type: "slug",
       options: {
@@ -32,9 +32,9 @@ export default {
       type: "number",
     },
     {
-      name: "price",
-      title: "Price",
-      type: "number",
+      name: "details",
+      title: "Details",
+      type: "string",
     },
   ],
 };
