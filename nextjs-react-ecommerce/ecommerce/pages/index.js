@@ -4,11 +4,13 @@ const Home = () => {
   return (
     <>
       HereBanner
-      <div>
+      <div className="products-heading">
         <h2>Best Selling Products</h2>
         <p>Sneakers of many variations</p>
       </div>
-      <div>{["Product 1", "Product2"].map((product) => product)}</div>
+      <div className="products-container">
+        {["Product 1", "Product2"].map((product) => product)}
+      </div>
       Footer
     </>
   );
