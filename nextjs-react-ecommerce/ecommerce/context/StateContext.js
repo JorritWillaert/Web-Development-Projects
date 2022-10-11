@@ -45,9 +45,11 @@ export const StateContext = ({ children }) => {
     foundProduct = cartItems.find((item) => item._id === id);
     index = cartItems.findIndex((product) => product._id === id);
 
+    // TODO: later fix the jumping of the updated item to the bottom
+    const newCartItems = cartItems.filter((item) => item._id !== id);
     if (value === "inc") {
       setCartItems([
-        ...cartItems,
+        ...newCartItems,
         { ...foundProduct, quantity: foundProduct.quantity + 1 },
       ]);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
@@ -55,7 +57,7 @@ export const StateContext = ({ children }) => {
     } else if (value === "dec") {
       if (foundProduct.quantity > 1) {
         setCartItems([
-          ...cartItems,
+          ...newCartItems,
           { ...foundProduct, quantity: foundProduct.quantity - 1 },
         ]);
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
@@ -87,6 +89,7 @@ export const StateContext = ({ children }) => {
         incQty,
         decQty,
         onAdd,
+        toggleCartItemQuantity,
       }}
     >
       {children}
