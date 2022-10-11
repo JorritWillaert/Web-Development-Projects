@@ -2,10 +2,11 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
-// Note: since the file is called `stripe.js`, the route is `/stripe`
+// Note: since the file is called `stripe.js`, the route is `/api/stripe`
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
+    console.log(req.body.cartItems);
     try {
       const params = {
         submit_type: "pay",
