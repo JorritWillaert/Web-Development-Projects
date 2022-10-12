@@ -5,7 +5,6 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 // Note: since the file is called `stripe.js`, the route is `/api/stripe`
 
 export default async function handler(req, res) {
-  console.log(req.body);
   if (req.method === "POST") {
     try {
       const params = {
@@ -30,7 +29,7 @@ export default async function handler(req, res) {
           console.log("IMAGE", newImage);
           return {
             price_data: {
-              currency: "usd",
+              currency: "eur",
               product_data: {
                 name: item.name,
                 images: [newImage],
