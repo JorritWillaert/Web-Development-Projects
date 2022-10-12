@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
@@ -28,13 +29,15 @@ const Cart = () => {
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
-    const response = await fetch("/api/stripe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(cartItems),
-    });
+    const response = await axios.post(
+      "/api/stripe",
+      JSON.stringify(cartItems),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (response.statusCode === 500) return;
 
