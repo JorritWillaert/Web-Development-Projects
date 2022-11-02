@@ -18,6 +18,7 @@ function Header() {
         <div className="relative hidden lg:inline-grid w-24 cursor-pointer">
           <Image
             src="https://links.papareact.com/ocw"
+            alt="Instagram"
             layout="fill"
             objectFit="contain"
           />
@@ -26,6 +27,7 @@ function Header() {
         <div className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer">
           <Image
             src="https://links.papareact.com/jjm"
+            alt="Instagram"
             layout="fill"
             objectFit="contain"
           />
