@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { faker } from "@faker-js/faker";
+import { randUserName } from "@ngneat/falso";
+import Story from "./Story.js";
 
 const Stories = () => {
   const [suggestions, setSuggestions] = useState([]);
   useEffect(() => {
     const suggestions = [...Array(20)].map((_, i) => ({
-      userId: faker.datatype.uuid(),
-      username: faker.internet.userName(),
-      email: faker.internet.email(),
-      avatar: faker.image.avatar(),
-      password: faker.internet.password(),
-      birthdate: faker.date.birthdate(),
-      registeredAt: faker.date.past(),
+      username: randUserName(),
+      avatar: "https://i.pravatar.cc/100/" + i,
       id: i,
     }));
 
+    console.log(suggestions);
     setSuggestions(suggestions);
   }, []);
 
