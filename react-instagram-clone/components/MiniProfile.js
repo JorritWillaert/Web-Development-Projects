@@ -11,12 +11,12 @@ const MiniProfile = () => {
         />
       </div>
 
-      <div>
-        <h2>Testname</h2>
-        <h3>Welcome to Instagram</h3>
+      <div className="flex-1 mx-4">
+        <h2 className="font-bold">Testname</h2>
+        <h3 className="text-sm text-gray-400">Welcome to Instagram</h3>
       </div>
 
-      <button>Sign Out</button>
+      <button className="text-blue-400 text-sm font-semibold">Sign Out</button>
     </div>
   );
 };
