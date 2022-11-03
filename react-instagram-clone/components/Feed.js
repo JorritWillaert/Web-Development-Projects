@@ -1,6 +1,8 @@
 import React from "react";
 import Stories from "./Stories.js";
 import Posts from "./Posts.js";
+import MiniProfile from "./MiniProfile.js";
+import Suggestions from "./Suggestions.js";
 
 const Feed = () => {
   return (
@@ -11,8 +13,8 @@ const Feed = () => {
       </section>
 
       <section>
-        {/* Mini profile */}
-        {/* Suggestions */}
+        <MiniProfile />
+        <Suggestions />
       </section>
     </main>
   );
