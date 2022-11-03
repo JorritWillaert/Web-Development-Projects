@@ -10,5 +10,15 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+
+  // The standard next auth page is this:
+  // theme: {
+  //   logo: "https://links.papareact.com/sq0",
+  //   brandColor: "#f13287",
+  //   colorScheme: "auto",
+  // },
+  pages: {
+    signIn: "/auth/signin",
+  },
 };
 export default NextAuth(authOptions);
