@@ -8,7 +8,9 @@
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/forms": "^0.5.3",
+    "firebase": "^9.13.0",
     "next": "latest",
+    "next-auth": "^4.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwind-scrollbar-hide": "^1.1.7"
