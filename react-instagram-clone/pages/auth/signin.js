@@ -1,11 +1,30 @@
 import React from "react";
+import { getProviders, signIn as signIntoProvider } from "next-auth/react";
 
-const signin = () => {
+// On the browser...
+const signIn = ({ providers }) => {
   return (
-    <div>
-      <h1>I am the signin page</h1>
-    </div>
+    <>
+      {Object.values(providers).map((provider) => (
+        <div key={provider.name}>
+          <button onClick={() => signIntoProvider(provider.id)}>
+            Sign in with {provider.name}
+          </button>
+        </div>
+      ))}
+    </>
   );
 };
 
-export default signin;
+// On the server...
+export async function getServerSideProps() {
+  const providers = await getProviders();
+
+  return {
+    props: {
+      providers,
+    },
+  };
+}
+
+export default signIn;
