@@ -4,11 +4,55 @@ import { modalState } from "../atoms/modalAtom.js";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { CameraIcon } from "@heroicons/react/outline";
+import { db, storage } from "../firebase";
+import {
+  addDoc,
+  collection,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
+import { ref, getDownloadURL, uploadString } from "firebase/storage";
 
 const Modal = () => {
+  const { data: session } = useSession();
   const [open, setOpen] = useRecoilState(modalState);
   const filePickerRef = useRef(null);
+  const captionRef = useRef(null);
+  const [loading, setLoading] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
+
+  const uploadPost = async () => {
+    if (loading) return;
+    setLoading(true);
+
+    // 1) Create a post and add to firestore 'posts' collection
+    // 2) Get the post ID for the newly created post
+    // 3) Upload the image to Firebase storage with the post ID
+    // 4) Get a download URL from Firebase storage and update the original post with image
+
+    const docRef = await addDoc(collection(db, "posts"), {
+      username: session.user.username,
+      caption: captionRef.current.value,
+      profileImg: session.user.image,
+      timestamp: serverTimestamp(),
+    });
+    console.log("New post added with ID: ", docRef.id);
+
+    const imageRef = ref(storage, `posts/${docRef.id}/image`);
+
+    await uploadString(imageRef, selectedFile, "data_url").then(
+      async (snapshot) => {
+        const downloadURL = await getDownloadURL(imageRef);
+        await updateDoc(docRef, {
+          image: downloadURL,
+        });
+      }
+    );
+
+    setOpen(false);
+    setLoading(false);
+    setSelectedFile(null);
+  };
 
   const addImageToPost = (e) => {
     const reader = new FileReader();
@@ -97,6 +141,7 @@ const Modal = () => {
                         <input
                           className="border-none focus:ring-0 w-full text-center"
                           type="text"
+                          ref={captionRef}
                           placeholder="Please enter a caption..."
                         />
                       </div>
