@@ -12,6 +12,7 @@ import { useSession } from "next-auth/react";
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   onSnapshot,
   orderBy,
@@ -27,6 +28,7 @@ const Post = ({ id, username, userImg, img, caption }) => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
+  const [hasLiked, setHasLiked] = useState(false);
 
   useEffect(
     () =>
@@ -48,10 +50,22 @@ const Post = ({ id, username, userImg, img, caption }) => {
     [db, id]
   );
 
+  useEffect(
+    () =>
+      setHasLiked(
+        likes.findIndex((like) => like.id === session?.user?.uid) !== -1
+      ),
+    [likes]
+  );
+
   const likePost = async () => {
-    await setDoc(doc(db, "posts", id, "likes", session.user.uid), {
-      username: session.user.username,
-    });
+    if (hasLiked) {
+      await deleteDoc(doc(db, "posts", id, "likes", session.user.uid));
+    } else {
+      await setDoc(doc(db, "posts", id, "likes", session.user.uid), {
+        username: session.user.username,
+      });
+    }
   };
 
   const sendComment = async (e) => {
