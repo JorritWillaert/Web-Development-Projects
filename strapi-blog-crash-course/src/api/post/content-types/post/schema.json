@@ -18,10 +18,6 @@
       "required": true,
       "minLength": 3
     },
-    "Date": {
-      "type": "date",
-      "required": true
-    },
     "authors": {
       "type": "relation",
       "relation": "oneToMany",
@@ -48,6 +44,11 @@
       "type": "uid",
       "targetField": "Title",
       "required": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
     }
   }
 }
