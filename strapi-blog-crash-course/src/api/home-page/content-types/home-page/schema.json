@@ -26,17 +26,13 @@
       "repeatable": false,
       "component": "layout.hero-section"
     },
-    "BlogCarousel": {
-      "displayName": "PostSelection",
-      "type": "component",
-      "repeatable": false,
-      "component": "blog.post-selection"
-    },
-    "FeaturedPost": {
-      "displayName": "FeaturedPost",
-      "type": "component",
-      "repeatable": false,
-      "component": "blog.featured-post"
+    "BlogSelection": {
+      "type": "dynamiczone",
+      "components": [
+        "blog.featured-post",
+        "blog.post-selection"
+      ],
+      "required": true
     }
   }
 }
