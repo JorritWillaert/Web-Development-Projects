@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useStateContext } from "../context";
+import { DisplayCampaigns } from "../components";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +21,13 @@ const Home = () => {
     }
   }, [address, contract]);
 
-  return <div>Home</div>;
+  return (
+    <DisplayCampaigns
+      title="All Campaigns"
+      isLoading={isLoading}
+      campaigns={campaigns}
+    ></DisplayCampaigns>
+  );
 };
 
 export default Home;
