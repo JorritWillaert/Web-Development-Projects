@@ -110,6 +110,7 @@ const Navbar = () => {
               title={address ? "Create a campaign" : "Connect wallet"}
               styles={address ? "bg-[#1dc071]" : "bg-[#8c6dfd]"}
               handleClick={() => {
+                setToggleDrawer(false);
                 if (address) navigate("create-campaign");
                 else "connect()";
               }}
