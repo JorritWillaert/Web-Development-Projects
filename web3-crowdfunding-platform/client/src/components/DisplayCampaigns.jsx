@@ -11,7 +11,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
   };
 
   return (
-    <div className="flex flex-wrap mt-[20px] gap-[26px]">
+    <div>
       <h1 className="font-epilogue font-semibold text-[18px] text-white text-left">
         {title} ({campaigns.length})
       </h1>
@@ -35,7 +35,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
           campaigns.length > 0 &&
           campaigns.map((campaign) => (
             <FundCard
-              key={campaign.id}
+              key={campaign.pId}
               {...campaign}
               handleClick={() => handleNavigate(campaign)}
             />
