@@ -9,7 +9,7 @@ import { thirdweb } from "../assets";
 
 const CampaignDetails = () => {
   const { state } = useLocation();
-  const { getDonations, contract, address } = useStateContext();
+  const { donate, getDonations, contract, address } = useStateContext();
 
   const [isLoading, setIsLoading] = useState(true);
   const [amount, setAmount] = useState("");
@@ -17,7 +17,23 @@ const CampaignDetails = () => {
 
   const remainingDays = daysLeft(state.deadline);
 
-  const handleDonate = async () => {};
+  const fetchDonators = async () => {
+    const donators = await getDonations(state.pId);
+    setDonators(donators);
+  };
+
+  const handleDonate = async () => {
+    setIsLoading(true);
+    await donate(state.pId, amount);
+    navigate("/");
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    if (contract) {
+      fetchDonators();
+    }
+  }, [contract, address]);
 
   return (
     <div>
@@ -34,7 +50,7 @@ const CampaignDetails = () => {
             <div
               className="absolute h-full bg-[#4acd8c]"
               style={{
-                widht: `${calculateBarPercentage(
+                width: `${calculateBarPercentage(
                   state.target,
                   state.amountCollected
                 )}%`,
